@@ -383,7 +383,7 @@ html {
     visibility: hidden;
   }
   .bttn_file::before {
-    content: 'Select some files';
+    content: 'Upload Files';
     display: inline-block;
     background-color: #458FF6;
     border-radius: 10px;
