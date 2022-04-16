@@ -26,7 +26,7 @@ html {
 }
 .lists li{
     padding: 9px;
-    font-size: 13px;
+    font-size: 70%;
 }
 
 .lists li:hover{
@@ -42,8 +42,13 @@ html {
     height:60vh;
     background-image: url('/static/images/image3.png');
     background-position:bottom;
-    background-size: cover;
+    background-size:cover;
     width: 100%;
+}
+@media (max-width:600px) {
+    .blue{
+        height:40vh;
+    }
 }
 .heading{
     margin-top: 1rem;
@@ -51,8 +56,8 @@ html {
     height: 100px;
     display:flex;
     padding: 2.5rem;
-    padding-left: 5rem;
-    padding-right: 10rem;
+    padding-left: 4rem;
+    padding-right: 8rem;
     height:auto;
     padding-bottom: 5rem;
 
@@ -66,13 +71,31 @@ html {
 .left_heading p{
     color: #7D7987;
     font-family: cursive;
-    font-size: 17px;
-    margin-top: 18px;
+    font-size: 180%;
     text-align: left;
 }
 
 .left_heading img{
     width: 27rem;
+}
+@media (max-width:780px) and (min-width:500px){
+    .left_heading img{
+        width: 100%;
+    }
+    .left_heading p{
+        font-size: 140%;
+    }
+}
+@media (max-width:500px){
+    .left_heading img{
+        width: 110%;
+    }
+    .left_heading p{
+        font-size:  90%;
+    }
+    .left_heading span{
+        display: none;
+    }
 }
 
 .right_heading{
@@ -86,12 +109,22 @@ html {
     width: 18em;
     height: 16rem;
 }
+@media (max-width:600px){
+    .heading{
+        padding-right: 0rem;
+        padding-left: 0rem;
+    }
+    .right_heading img{
+        width: 14rem;
+        height: 12rem;
+    }
+}
 .step{
     text-align: center;
     margin-top: 3rem;
 }
 .step h1{
-    font-size: 36px;
+    font-size: 350%;
     font-weight: bold;
     color: #458FF6;
 }
@@ -106,12 +139,13 @@ html {
     column-gap: 2px;
     background: #458FF60D;
 }
+
 .inner-step{
     padding: 1rem;
     /* width: 40rem; */
     text-align: center;
     color: #7D7987;
-    font-size: 15px;
+    font-size: 140%;
     line-height: 1.4;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -126,24 +160,29 @@ html {
     text-align: center;
 }
 .service h1{
-    font-size: 33px;
+    font-size: 280%;
     color: #458FF6;
 }
 .service p{
-    font-size: 16px;
+    font-size: 150%;
     margin-top: 2rem;
     color: #7D7987;
 }
 .services{
     margin-top: 2rem;
-    padding: 5rem;
-    padding-left: 8rem;
-    padding-right: 8rem;
+    padding: 10%;
+    padding-left: 8%;
+    padding-right: 8%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
+    /* grid-template-rows: repeat(2,1fr); */
     row-gap: 20px;
     column-gap: 20px;
+}
+@media (min-width:600px){
+    .services{
+        grid-template-columns: repeat(3,1fr);
+    }
 }
 .inner-service{
     padding: 1.2rem;
@@ -158,12 +197,16 @@ html {
     text-align: justify;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+.inner-service:hover{
+    background-color: #f7d7e33b;
+    margin-top: -1rem;
+}
 .inner-service img{
     width: 60px;
     float: left;
 }
 .inner-service h2{
-    font-size: 15px;
+    font-size: 110%;
     color: black;
     float:left;
     margin-top: 14px;
@@ -173,11 +216,13 @@ html {
     float: left;
     margin-left:5rem;
 }
+.bttn{
+    width: 100%;
+    text-align: center;
+}
 .learn{
     margin-top:1rem;
     padding: 8px 25px;
-    position: absolute;
-    left: 45%;
     color: #458FF6;
     border: 1px solid #458FF6;
     cursor: pointer;
@@ -199,13 +244,18 @@ html {
 }
 .tools{
     padding: 3rem;
-    padding-left: 10rem;
-    padding-right: 10rem;
+    padding-left: 10%;
+    padding-right: 10%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
+    /* grid-template-rows: repeat(2,1fr); */
     row-gap: 20px;
     column-gap: 20px;
+}
+@media (min-width:600px){
+    .tools{
+        grid-template-columns: repeat(3,1fr);
+    }
 }
 .inner-tool{
     padding:30px 8px;
@@ -217,6 +267,10 @@ html {
     cursor: pointer;
     text-align: justify;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.inner-tool:hover{
+    background-color: #ffffff;
+    margin-top: -1rem;
 }
 .inner-tool img{
     width: 55px;
@@ -235,37 +289,47 @@ html {
 }
 .trial{
     padding: 2rem;
-    padding-left: 9rem;
-    padding-right: 9rem;
+    padding-left: 9.5%;
+    padding-right: 9%;
     margin-top: 7rem;
 }
 .inner-trial{
     margin-top: 1rem;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
     background-color: #458FF6;
     padding: 4rem;
-    column-gap: 10px;
+    padding-bottom: 14rem;
+
 }
 .left_trial{
-    height: auto;
+    float: left;
 }
 .left_trial img{
-    width: 22rem;
+    width: 55%;
 }
 .right_trial{
-    grid-column-start:2;
-    grid-column-end:4;
-    margin-top: 1rem;
+    position: absolute;
+    left:55%;
+    padding-right: 4rem;
     color: white;
-    padding-left: 4rem;
 }
 .right_trial h1{
-    font-size: 25px;
+    font-size: 190%;
 }
 .right_trial p{
     margin-top: 15px;
-    font-size: 15px;
+    font-size: 120%;
+}
+@media (max-width:400px){
+    .left_trial img{
+        width: 55%;
+    }
+    .right_trial h1{
+        font-size: 15px;
+    }
+    .left_trial p{
+        font-size: 15px;
+    }
+
 }
 
 .footer{
@@ -306,3 +370,36 @@ html {
     margin-left: -5rem;
 
 }
+@media (max-width:650px){
+    .steps{
+        font-size: 90%;
+    }
+    .steps span{
+        display:none;
+    }   
+}
+
+.bttn_file::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .bttn_file::before {
+    content: 'Select some files';
+    display: inline-block;
+    background-color: #458FF6;
+    border-radius: 10px;
+    padding: 8px 16px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #458FF6;
+    font-weight: 700;
+    font-size: 10pt;
+    color: #ffffff;
+  }
+  .bttn_file:hover::before {
+    border-color: rgb(253, 208, 208);
+  }
+  .bttn_file:active::before {
+    background-color: #458FF6;
+  }
