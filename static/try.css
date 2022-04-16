@@ -1,5 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .2s linear;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+.logo{
+    margin-top:-4.5%;
+    right: 7%;
+    padding-right: 20%;
+}
+.logo p1{
+  color: rgb(3, 3, 3);
+  font-family: 'MuseoModerno';
+}
 .navbar{
-    text-align: right;
+    text-align:right;
 }
 .body{
     display: fixed;
@@ -12,10 +29,12 @@
     cursor: pointer;
     font-size: 20px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
 }
 .lists li{
     padding: 10px;
     font-size: 16px;
+    
 }
 
 .lists li:hover{
@@ -37,17 +56,25 @@
  margin-top:-50px; /* this is half the height of your div*/  
  margin-left:-100px; /*this is half of width of your div*/
 }
-/* home section */
-.up{
-    padding: 4rem;
-    padding-left: 20rem;
-    padding-right: 20rem;
+
+.forme{
+    margin-left: 40%;
+    margin-top: 10%;
+ 
+
 }
+.up{
+    padding: 6%;
+    padding-left: 9%;
+    padding-right: 9%;
+}
+
 .upload img{
-    height: 14rem;
+    height: 14%;
    position: absolute;
    left: 43%;
    margin-top: -3rem;
+   margin-left: 1%
 }
 .upload{
    height: 60vh;
@@ -57,51 +84,46 @@
   
 }
 .main-contain{
-    padding: 7rem;
-    display: inline-flex;
-    margin-left:9rem;
-    margin-bottom: 4rem;
+    padding: -20%;
+    display: contents;
+    margin-left:35%;
+    margin-bottom: 10%;
 }
 .child{
     float: left;
-    margin-left: 8rem;
+    margin-left: 10%;
+    padding-right: 10%;
 }
 .child img{
-    /* height: 50%;
-    margin-right: 70%; */
+    height: 30%;
+    margin-right: 70%;
+}
+.containers{
+    margin-left: 16%;
+    margin-top: 7%;
+    
 }
 
-.containers {
-   text-align: center;
-   float: right;
-   margin-top: 6rem;
- margin-left: 4rem;
 
-   
-}
 .containers ul{
     list-style-type: disc;
-   
    text-align: justify;
    left: 50%;
    margin-top: 2rem;
-   line-height: 1.4;
-   
-   
-  
-   
+   line-height: 1.8; 
+    
 }
 .containers h1{
   font-size: 20px;
   font-weight: bold;
   font-family: 'Mulish';
-margin-left: -5rem;
+  margin-left: 20%;
 }
 .footer{
     display: grid;
     width: 100%;
     background-color: #F6F9FF;
-    padding: 4rem;
+    padding: -20%;
     margin-top: 4.5rem;
 } 
 .inner-footer{ 
@@ -113,9 +135,9 @@ margin-left: -5rem;
 }
 .footer-items{
     display:inline-block;
-    flex: 1 1 200px;
+    flex: 1 1 10%;
     text-align: center;
-    padding:2rem;
+    padding:4%;
     text-align: justify;
 }
 .footer-items ul{
@@ -135,3 +157,24 @@ margin-left: -5rem;
     margin-left: -5rem;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

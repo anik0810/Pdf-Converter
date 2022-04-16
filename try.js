@@ -1,4 +1,4 @@
-function files(){
-    return document.getElementById("user").value;
-  }
-  module.export={files}
+function sum(a,b){
+  return a+b;
+}
+module.exports={sum}
