@@ -47,20 +47,20 @@
 }
 
 
-/* .forme input{
+.forme input{
     position: absolute;
-    margin-top: 8rem;
+    margin-top: 6rem;
     margin-left: -5rem;
-} */
+}
 @media (max-width:500px){
     .forme input{
-    margin-left: -6rem;
-    margin-top: 11rem;
+    margin-left: -5rem;
+    margin-top: 10rem;
 
     }
     .convert{
         margin-left: -5rem;
-        margin-top: 4rem;
+        margin-top: 2rem;
 
     }
 }
@@ -219,6 +219,13 @@
     padding:4%;
     text-align: justify;
 }
+.footer-items h1{
+    font-size: 20px;
+}
+.footer-items p{
+    font-size: 15px;
+    margin-top: 10px;
+}
 .footer-items ul{
     list-style-type: none;
     line-height: 1.8;
@@ -227,7 +234,7 @@
 }
 
 .footer-items h3{
-    font-size: 20px;
+    font-size: 15px;
 }
 .containers h1{
   font-size: 20px;
