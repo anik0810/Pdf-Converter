@@ -6,6 +6,7 @@ const image=require("./image");
 const html=require("./html");
 const merge=require("./merge");
 const delete_file=require("./delete");
+var fs = require('fs');
 app.use(express.urlencoded());
 const upload = require('express-fileupload');
 app.use(upload());
@@ -69,7 +70,12 @@ app.post('/file',(req,res) =>{
         setTimeout(() => {
             res.status(200).redirect(`/static/${filename}.pdf`);
             }, 4000);
-        // delete_file.delete_file(`./static/${filename}.pdf`);  
+            setTimeout(function () {
+                fs.unlink(`./static/${filename}.pdf`, function (err) {
+                    if (err) throw err;
+                    console.log('pdf deleted!');
+                });
+                },5000)
     }
 })
 app.post('/image',(req,res) =>{
@@ -92,6 +98,12 @@ app.post('/image',(req,res) =>{
         setTimeout(() => {
             res.status(200).redirect(`/static/${filename}.pdf`);
             }, 4000);
+        setTimeout(function () {
+            fs.unlink(`./static/${filename}.pdf`, function (err) {
+                if (err) throw err;
+                console.log('pdf deleted!');
+            });
+            },5000);
             
     }
 })
@@ -113,6 +125,12 @@ app.post('/html',(req,res) =>{
         setTimeout(() => {
             res.status(200).redirect(`/static/${filename}.pdf`);
             }, 4000);
+        setTimeout(function () {
+            fs.unlink(`./static/${filename}.pdf`, function (err) {
+                if (err) throw err;
+                console.log('pdf deleted!');
+            });
+            },5000);
             
     }
 })
@@ -141,7 +159,13 @@ app.post('/merge',(req,res) =>{
         setTimeout(() => {
             res.status(200).redirect(`/static/${filename1+filename2}.pdf`);
             }, 4000);
-            
+        setTimeout(function () {
+            fs.unlink(`./static/${filename1+filename2}.pdf`, function (err) {
+                if (err) throw err;
+                console.log('pdf deleted!');
+            });
+            },5000);
+        
     }
 })
 

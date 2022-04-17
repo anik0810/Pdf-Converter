@@ -30,6 +30,7 @@ html {
       font-size: 40%;
     }
   }
+
 .lists{
     list-style-type:none;
     display: inline-flex;
@@ -77,6 +78,13 @@ html {
     padding-bottom: 5rem;
 
 }
+@media (min-width:1500px){
+    .heading{
+        padding-left: 12rem;
+        padding-right: 22rem;
+    }
+    
+}
 .left_heading{
     display:inline-block;
     flex: 1 1 200px;
@@ -121,8 +129,8 @@ html {
 }
 
 .right_heading img{
-    width: 18em;
-    height: 16rem;
+    width: 23em;
+    height: 19rem;
 }
 
 

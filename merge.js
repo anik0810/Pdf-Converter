@@ -21,12 +21,12 @@ formData.append('second_half', fs.createReadStream(input2))
   try {
     const response = await axios.post('https://api.pspdfkit.com/build', formData, {
       headers: formData.getHeaders({
-          'Authorization': 'Bearer pdf_live_Wijp0axRehcbBdFqIIgVqZi5qgHbUUy5O3xQVqgQP69'
+          'Authorization': 'Bearer pdf_live_3rPfVJVbzL4ipX7bTKAihGKmlihgmmvTI3n27dHA7no'
       }),
       responseType: "stream"
     })
 
-    response.data.pipe(fs.createWriteStream(`./static/${output}`))
+    response.data.pipe(fs.createWriteStream(output))
   } catch (e) {
     const errorString = await streamToString(e.response.data)
     console.log(errorString)
