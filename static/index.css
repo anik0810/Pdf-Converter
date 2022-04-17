@@ -379,6 +379,7 @@ html {
 
 .footer-items h3{
     font-size: 20px;
+    color:blue;
 }
 .containers h1{
   font-size: 20px;
@@ -400,11 +401,11 @@ html {
     visibility: hidden;
   }
   .bttn_file::before {
-    content: 'Select some files';
+    content: 'Upload Files';
     display: inline-block;
     background-color: #458FF6;
     border-radius: 10px;
-    padding: 8px 16px;
+    padding: 8px 42px;
     outline: none;
     white-space: nowrap;
     -webkit-user-select: none;
@@ -420,3 +421,13 @@ html {
   .bttn_file:active::before {
     background-color: #458FF6;
   }
+
+  .convert{
+    padding: 8px 30px;
+    background-color: #458FF6;
+    border-radius: 10px;
+    border:1px solid #458FF6;
+    color: white;
+    cursor: pointer;
+    margin-top: 1rem;
+}

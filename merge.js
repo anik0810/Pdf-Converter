@@ -2,16 +2,20 @@ const axios = require('axios')
 const FormData = require('form-data')
 const fs = require('fs')
 
-function converter(input,output){
+function merge(input1,input2,output){
 const formData = new FormData()
 formData.append('instructions', JSON.stringify({
   parts: [
     {
-      file: "document"
+      file: "first_half"
+    },
+    {
+      file: "second_half"
     }
   ]
 }))
-formData.append('document', fs.createReadStream(input))
+formData.append('first_half', fs.createReadStream(input1))
+formData.append('second_half', fs.createReadStream(input2))
 
 ;(async () => {
   try {
@@ -39,5 +43,4 @@ function streamToString(stream) {
 }
 }
 
-module.exports={converter}
-
+module.exports={merge}
