@@ -15,6 +15,21 @@ html {
 .navbar{
     text-align: right;
 }
+.logo{
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+.logo p1{
+  color: rgb(3, 3, 3);
+  font-family: 'MuseoModerno';
+  font-size: 220%;
+}
+@media only screen and (max-width: 600px) {
+    .logo {
+      font-size: 40%;
+    }
+  }
 .lists{
     list-style-type:none;
     display: inline-flex;
@@ -109,6 +124,8 @@ html {
     width: 18em;
     height: 16rem;
 }
+
+
 @media (max-width:600px){
     .heading{
         padding-right: 0rem;

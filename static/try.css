@@ -7,14 +7,20 @@
     text-decoration: none;
 }
 .logo{
-    margin-top:-4.5%;
-    right: 7%;
-    padding-right: 20%;
-}
-.logo p1{
-  color: rgb(3, 3, 3);
-  font-family: 'MuseoModerno';
-}
+    position: absolute;
+    top: 0;
+    left: 0;
+ }
+ .logo p1{
+   color: rgb(3, 3, 3);
+   font-family: 'MuseoModerno';
+   font-size: 220%;
+ }
+ @media only screen and (max-width: 600px) {
+     .logo {
+       font-size: 40%;
+     }
+   }
 .navbar{
     text-align:right;
 }
