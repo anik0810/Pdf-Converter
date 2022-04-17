@@ -5,6 +5,7 @@ const sum=require("./converter");
 const image=require("./image");
 const html=require("./html");
 const merge=require("./merge");
+const delete_file=require("./delete");
 app.use(express.urlencoded());
 const upload = require('express-fileupload');
 app.use(upload());
@@ -56,21 +57,23 @@ app.post('/file',(req,res) =>{
         console.log(req.files)
         var file =req.files.myFile
         var filename=file.name
-        console.log(filename);
-        console.log(filename)
         file.mv('./files/'+filename, function(err){
             if(err){
                 res.send(err)
             }else{
                 sum.converter(`./files/${filename}`,`${filename}.pdf`);
-                // res.send("File uploaded")
+                delete_file.delete_file(`./files/${filename}`);
+
             }
         })
-        
         setTimeout(() => {
             res.status(200).redirect(`/static/${filename}.pdf`);
-            }, 5000);
+            }, 3000);
+        setTimeout(()=>{
+            delete_file.delete_file(`./static/${filename}.pdf`);
+        },7000);
             
+        
     }
 })
 app.post('/image',(req,res) =>{

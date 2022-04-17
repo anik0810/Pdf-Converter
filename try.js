@@ -1,5 +1,6 @@
+import urlExist from 'url-exist';
 
-function sum(a,b){
-  return a+b;
-}
-module.exports={sum}
+const exists = await urlExist('https://google.com');
+
+// Handle result
+console.log(exists);
