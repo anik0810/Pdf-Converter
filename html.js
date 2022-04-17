@@ -17,7 +17,7 @@ formData.append('index.html', fs.createReadStream(input))
   try {
     const response = await axios.post('https://api.pspdfkit.com/build', formData, {
       headers: formData.getHeaders({
-          'Authorization': 'Bearer pdf_live_3rPfVJVbzL4ipX7bTKAihGKmlihgmmvTI3n27dHA7no'
+          'Authorization': 'Bearer pdf_live_Wijp0axRehcbBdFqIIgVqZi5qgHbUUy5O3xQVqgQP69'
       }),
       responseType: "stream"
     })

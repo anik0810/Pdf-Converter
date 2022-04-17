@@ -134,6 +134,7 @@ html {
 }
 
 
+
 @media (max-width:600px){
     .heading{
         padding-right: 0rem;
@@ -143,6 +144,13 @@ html {
         width: 14rem;
         height: 12rem;
     }
+}
+.bg_box{
+    background-image: url(/static/images/element.png);
+    background-repeat: no-repeat;
+    background-size: 10vh;
+    background-position: right;
+    background-attachment: fixed;
 }
 .step{
     text-align: center;
@@ -193,6 +201,40 @@ html {
     margin-top: 2rem;
     color: #7D7987;
 }
+.bg{
+    background-image: url('/static/images/bg element.png');
+    background-repeat: no-repeat;
+    top:40%;
+    background-size:60vh;
+    background-position: left;
+    background-attachment: fixed;
+}
+.bg1{
+    background-image: url('/static/images/bg element (1).png');
+    background-repeat: no-repeat;
+    background-size:70vh;
+    background-position: right;
+    background-attachment: fixed;
+}
+
+@media (min-width:400px)and (max-width:700px) {
+    .bg{
+        background-size: 50vh;
+    }
+    .bg1{
+        background-size: 60vh;
+    }
+}
+@media (max-width:400px) {
+    .bg{
+        background-size: 35vh;
+    }
+    .bg1{
+        background-size: 35vh;
+    }
+}
+
+
 .services{
     margin-top: 2rem;
     padding: 10%;
@@ -214,6 +256,7 @@ html {
     text-align: center;
     box-shadow: 0 0 14px #8888884d;
     height: auto;
+    background-color: #ffffff;
     width: auto;
     color: #7D7987;
     font-size: 15px;
@@ -252,6 +295,7 @@ html {
     border: 1px solid #458FF6;
     cursor: pointer;
 }
+
 .tool{
     margin-top: 4rem;
     padding: 5rem;
@@ -438,4 +482,16 @@ html {
     color: white;
     cursor: pointer;
     margin-top: 1rem;
+}
+
+@media (max-width:600px){
+    .bttn_file{
+        display: none;
+    }
+    .convert{
+        display: none;
+    }
+    .left_heading p{
+        display: none;
+    }
 }

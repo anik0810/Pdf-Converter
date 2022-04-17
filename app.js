@@ -63,19 +63,13 @@ app.post('/file',(req,res) =>{
                 res.send(err)
             }else{
                 sum.converter(`./files/${filename}`,`${filename}.pdf`);
-                delete_file.delete_file(`./files/${filename}`);
 
             }
         })
         setTimeout(() => {
             res.status(200).redirect(`/static/${filename}.pdf`);
+            delete_file.delete_file(`./files/${filename}`);
             }, 4000);
-            setTimeout(function () {
-                fs.unlink(`./static/${filename}.pdf`, function (err) {
-                    if (err) throw err;
-                    console.log('pdf deleted!');
-                });
-                },5000)
     }
 })
 app.post('/image',(req,res) =>{
@@ -90,20 +84,13 @@ app.post('/image',(req,res) =>{
                 res.send(err)
             }else{
                 image.image(`./files/${filename}`,`${filename}.pdf`);
-                delete_file.delete_file(`./files/${filename}`);
-                // res.send("File uploaded")
             }
         })
         
         setTimeout(() => {
             res.status(200).redirect(`/static/${filename}.pdf`);
+            delete_file.delete_file(`./files/${filename}`);
             }, 4000);
-        setTimeout(function () {
-            fs.unlink(`./static/${filename}.pdf`, function (err) {
-                if (err) throw err;
-                console.log('pdf deleted!');
-            });
-            },5000);
             
     }
 })
@@ -117,20 +104,14 @@ app.post('/html',(req,res) =>{
                 res.send(err)
             }else{
                 html.html(`./files/${filename}`,`${filename}.pdf`);
-                delete_file.delete_file(`./files/${filename}`);
-                // res.send("File uploaded")
+                // delete_file.delete_file(`./files/${filename}`);
             }
         })
         
         setTimeout(() => {
             res.status(200).redirect(`/static/${filename}.pdf`);
+            delete_file.delete_file(`./files/${filename}`);
             }, 4000);
-        setTimeout(function () {
-            fs.unlink(`./static/${filename}.pdf`, function (err) {
-                if (err) throw err;
-                console.log('pdf deleted!');
-            });
-            },5000);
             
     }
 })
@@ -150,22 +131,15 @@ app.post('/merge',(req,res) =>{
             if(err){
                 res.send(err)
             }else{
-                merge.merge(`./files/${filename1}`,`./files/${filename2}`,`${filename1+filename2}.pdf`)
-                delete_file.delete_file(`./files/${filename1}`);
-                delete_file.delete_file(`./files/${filename2}`);
+                merge.merge(`./files/${filename1}`,`./files/${filename2}`,`./static/${filename1+filename2}.pdf`)
             }
         })
         
         setTimeout(() => {
             res.status(200).redirect(`/static/${filename1+filename2}.pdf`);
+            delete_file.delete_file(`./files/${filename1}`);
+            delete_file.delete_file(`./files/${filename2}`);
             }, 4000);
-        setTimeout(function () {
-            fs.unlink(`./static/${filename1+filename2}.pdf`, function (err) {
-                if (err) throw err;
-                console.log('pdf deleted!');
-            });
-            },5000);
-        
     }
 })
 
