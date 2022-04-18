@@ -7,11 +7,17 @@ const html=require("./html");
 const merge=require("./merge");
 const delete_file=require("./delete");
 var fs = require('fs');
-app.use(express.urlencoded());
 const upload = require('express-fileupload');
 app.use(upload());
 // let url=req.url;
 // const converter=require('./converter');
+
+function delete_pdf(file){
+fs.unlink(file, function (err) {
+    if (err) throw err;
+    console.log('File deleted from our server!');
+});
+}
 
 const port=80;
 
@@ -55,7 +61,6 @@ app.get("/this",(req,res)=>{
 
 app.post('/file',(req,res) =>{
     if (req.files){
-        console.log(req.files)
         var file =req.files.myFile
         var filename=file.name
         file.mv('./files/'+filename, function(err){
@@ -70,15 +75,15 @@ app.post('/file',(req,res) =>{
             res.status(200).redirect(`/static/${filename}.pdf`);
             delete_file.delete_file(`./files/${filename}`);
             }, 4000);
+        setTimeout(function(){
+            delete_pdf(`./static/${filename}.pdf`);
+        },8000);
     }
 })
 app.post('/image',(req,res) =>{
     if (req.files){
-        console.log(req.files)
         var file =req.files.myFile
         var filename=file.name
-        console.log(filename);
-        console.log(filename)
         file.mv('./files/'+filename, function(err){
             if(err){
                 res.send(err)
@@ -91,12 +96,14 @@ app.post('/image',(req,res) =>{
             res.status(200).redirect(`/static/${filename}.pdf`);
             delete_file.delete_file(`./files/${filename}`);
             }, 4000);
+        setTimeout(function(){
+            delete_pdf(`./static/${filename}.pdf`);
+        },8000);
             
     }
 })
 app.post('/html',(req,res) =>{
     if (req.files){
-        console.log(req.files)
         var file =req.files.myFile
         var filename=file.name
         file.mv('./files/'+filename, function(err){
@@ -104,7 +111,6 @@ app.post('/html',(req,res) =>{
                 res.send(err)
             }else{
                 html.html(`./files/${filename}`,`${filename}.pdf`);
-                // delete_file.delete_file(`./files/${filename}`);
             }
         })
         
@@ -112,12 +118,14 @@ app.post('/html',(req,res) =>{
             res.status(200).redirect(`/static/${filename}.pdf`);
             delete_file.delete_file(`./files/${filename}`);
             }, 4000);
+        setTimeout(function(){
+            delete_pdf(`./static/${filename}.pdf`);
+        },8000);
             
     }
 })
 app.post('/merge',(req,res) =>{
     if (req.files){
-        console.log(req.files)
         var file1 =req.files.myFile1
         var file2 =req.files.myFile2
         var filename1=file1.name
@@ -140,10 +148,13 @@ app.post('/merge',(req,res) =>{
             delete_file.delete_file(`./files/${filename1}`);
             delete_file.delete_file(`./files/${filename2}`);
             }, 4000);
+        setTimeout(function(){
+            delete_pdf(`./static/${filename1+filename2}.pdf`);
+        },8000);
     }
 })
 
 
 app.listen(port,()=>{
-    console.log(`The application started on ${port}`);
+    console.log(`The server is running on ${port}`);
 })
