@@ -75,9 +75,9 @@ app.post('/file',(req,res) =>{
             res.status(200).redirect(`/static/${filename}.pdf`);
             delete_file.delete_file(`./files/${filename}`);
             }, 5000);
-        setTimeout(function(){
-            delete_pdf(`./static/${filename}.pdf`);
-        },8000);
+        // setTimeout(function(){
+        //     delete_pdf(`./static/${filename}.pdf`);
+        // },8000);
     }
 })
 app.post('/image',(req,res) =>{

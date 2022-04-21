@@ -210,7 +210,7 @@ html {
     background-attachment: fixed;
 }
 .bg1{
-    background-image: url('/static/images/bg element (1).png');
+    background-image: url('/static/images/bg element1.png');
     background-repeat: no-repeat;
     background-size:70vh;
     background-position: right;
